@@ -1,0 +1,46 @@
+{
+  "kind": "collectionType",
+  "collectionName": "events",
+  "info": {
+    "singularName": "event",
+    "pluralName": "events",
+    "displayName": "Termine"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "maxLength": 100
+    },
+    "startdate": {
+      "type": "date"
+    },
+    "starttime": {
+      "type": "time"
+    },
+    "enddate": {
+      "type": "date"
+    },
+    "endtime": {
+      "type": "time"
+    },
+    "allday": {
+      "type": "boolean",
+      "default": false
+    },
+    "description": {
+      "type": "blocks"
+    },
+    "attachments": {
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
+      "type": "media",
+      "multiple": true
+    }
+  }
+}

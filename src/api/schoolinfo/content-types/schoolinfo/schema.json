@@ -4,7 +4,8 @@
   "info": {
     "singularName": "schoolinfo",
     "pluralName": "schoolinfos",
-    "displayName": "Schulinformationen"
+    "displayName": "Schulinformationen",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -28,6 +29,23 @@
     },
     "email": {
       "type": "string"
+    },
+    "schoolsubname": {
+      "type": "string"
+    },
+    "Logo_positive": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "Logo_negative": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }

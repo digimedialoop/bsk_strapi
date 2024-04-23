@@ -362,41 +362,6 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
-export interface ApiSchoolinfoSchoolinfo extends Schema.SingleType {
-  collectionName: 'schoolinfos';
-  info: {
-    singularName: 'schoolinfo';
-    pluralName: 'schoolinfos';
-    displayName: 'Schulinformationen';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    schoolname: Attribute.String;
-    street: Attribute.String;
-    postalcode: Attribute.String;
-    city: Attribute.String;
-    phone: Attribute.String;
-    email: Attribute.String;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::schoolinfo.schoolinfo',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::schoolinfo.schoolinfo',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface PluginUploadFile extends Schema.CollectionType {
   collectionName: 'files';
   info: {
@@ -823,6 +788,156 @@ export interface PluginI18NLocale extends Schema.CollectionType {
   };
 }
 
+export interface ApiCooperationCooperation extends Schema.CollectionType {
+  collectionName: 'cooperations';
+  info: {
+    singularName: 'cooperation';
+    pluralName: 'cooperations';
+    displayName: 'Kooperationspartner';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    company: Attribute.String;
+    link: Attribute.String;
+    Logo: Attribute.Media;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::cooperation.cooperation',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::cooperation.cooperation',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiEventEvent extends Schema.CollectionType {
+  collectionName: 'events';
+  info: {
+    singularName: 'event';
+    pluralName: 'events';
+    displayName: 'Termine';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String &
+      Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
+    startdate: Attribute.Date;
+    starttime: Attribute.Time;
+    enddate: Attribute.Date;
+    endtime: Attribute.Time;
+    allday: Attribute.Boolean & Attribute.DefaultTo<false>;
+    description: Attribute.Blocks;
+    attachments: Attribute.Media;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::event.event',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::event.event',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiNewsarticleNewsarticle extends Schema.CollectionType {
+  collectionName: 'newsarticles';
+  info: {
+    singularName: 'newsarticle';
+    pluralName: 'newsarticles';
+    displayName: 'Aktuelles';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    headline: Attribute.String &
+      Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
+    teaser: Attribute.String &
+      Attribute.SetMinMaxLength<{
+        maxLength: 200;
+      }>;
+    text: Attribute.Blocks;
+    images: Attribute.Media;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::newsarticle.newsarticle',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::newsarticle.newsarticle',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiSchoolinfoSchoolinfo extends Schema.SingleType {
+  collectionName: 'schoolinfos';
+  info: {
+    singularName: 'schoolinfo';
+    pluralName: 'schoolinfos';
+    displayName: 'Schulinformationen';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    schoolname: Attribute.String;
+    street: Attribute.String;
+    postalcode: Attribute.String;
+    city: Attribute.String;
+    phone: Attribute.String;
+    email: Attribute.String;
+    schoolsubname: Attribute.String;
+    Logo_positive: Attribute.Media;
+    Logo_negative: Attribute.Media;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::schoolinfo.schoolinfo',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::schoolinfo.schoolinfo',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -833,7 +948,6 @@ declare module '@strapi/types' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
-      'api::schoolinfo.schoolinfo': ApiSchoolinfoSchoolinfo;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::content-releases.release': PluginContentReleasesRelease;
@@ -842,6 +956,10 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::i18n.locale': PluginI18NLocale;
+      'api::cooperation.cooperation': ApiCooperationCooperation;
+      'api::event.event': ApiEventEvent;
+      'api::newsarticle.newsarticle': ApiNewsarticleNewsarticle;
+      'api::schoolinfo.schoolinfo': ApiSchoolinfoSchoolinfo;
     }
   }
 }
