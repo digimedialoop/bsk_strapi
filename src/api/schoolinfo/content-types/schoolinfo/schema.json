@@ -1,0 +1,33 @@
+{
+  "kind": "singleType",
+  "collectionName": "schoolinfos",
+  "info": {
+    "singularName": "schoolinfo",
+    "pluralName": "schoolinfos",
+    "displayName": "Schulinformationen"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "schoolname": {
+      "type": "string"
+    },
+    "street": {
+      "type": "string"
+    },
+    "postalcode": {
+      "type": "string"
+    },
+    "city": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    }
+  }
+}
