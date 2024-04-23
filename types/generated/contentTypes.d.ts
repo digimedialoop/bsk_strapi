@@ -882,6 +882,8 @@ export interface ApiNewsarticleNewsarticle extends Schema.CollectionType {
       }>;
     text: Attribute.Blocks;
     images: Attribute.Media;
+    publishdate: Attribute.Date;
+    link: Attribute.UID<'api::newsarticle.newsarticle', 'headline'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

@@ -30,6 +30,13 @@
       "allowedTypes": [
         "images"
       ]
+    },
+    "publishdate": {
+      "type": "date"
+    },
+    "link": {
+      "type": "uid",
+      "targetField": "headline"
     }
   }
 }
