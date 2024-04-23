@@ -4,7 +4,8 @@
   "info": {
     "singularName": "newsarticle",
     "pluralName": "newsarticles",
-    "displayName": "Aktuelles"
+    "displayName": "Aktuelles",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -13,21 +14,22 @@
   "attributes": {
     "headline": {
       "type": "string",
-      "maxLength": 100
+      "maxLength": 60
     },
     "teaser": {
       "type": "string",
-      "maxLength": 200
+      "maxLength": 120
     },
     "text": {
       "type": "blocks"
     },
     "images": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images"
-      ],
-      "type": "media",
-      "multiple": true
+      ]
     }
   }
 }

@@ -866,6 +866,7 @@ export interface ApiNewsarticleNewsarticle extends Schema.CollectionType {
     singularName: 'newsarticle';
     pluralName: 'newsarticles';
     displayName: 'Aktuelles';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -873,11 +874,11 @@ export interface ApiNewsarticleNewsarticle extends Schema.CollectionType {
   attributes: {
     headline: Attribute.String &
       Attribute.SetMinMaxLength<{
-        maxLength: 100;
+        maxLength: 60;
       }>;
     teaser: Attribute.String &
       Attribute.SetMinMaxLength<{
-        maxLength: 200;
+        maxLength: 120;
       }>;
     text: Attribute.Blocks;
     images: Attribute.Media;
