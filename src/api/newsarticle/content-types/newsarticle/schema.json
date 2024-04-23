@@ -16,10 +16,6 @@
       "type": "string",
       "maxLength": 60
     },
-    "teaser": {
-      "type": "string",
-      "maxLength": 120
-    },
     "text": {
       "type": "blocks"
     },

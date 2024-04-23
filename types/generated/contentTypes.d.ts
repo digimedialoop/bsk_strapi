@@ -876,10 +876,6 @@ export interface ApiNewsarticleNewsarticle extends Schema.CollectionType {
       Attribute.SetMinMaxLength<{
         maxLength: 60;
       }>;
-    teaser: Attribute.String &
-      Attribute.SetMinMaxLength<{
-        maxLength: 120;
-      }>;
     text: Attribute.Blocks;
     images: Attribute.Media;
     publishdate: Attribute.Date;
