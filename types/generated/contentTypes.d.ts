@@ -898,6 +898,34 @@ export interface ApiNewsarticleNewsarticle extends Schema.CollectionType {
   };
 }
 
+export interface ApiPagePage extends Schema.CollectionType {
+  collectionName: 'pages';
+  info: {
+    singularName: 'page';
+    pluralName: 'pages';
+    displayName: 'Seiten';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    pagename: Attribute.String;
+    pagetitle: Attribute.String;
+    pagekeywords: Attribute.Text;
+    pagedescription: Attribute.Text;
+    og_image: Attribute.Media;
+    sections: Attribute.DynamicZone<['basics.section']>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::page.page', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::page.page', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
 export interface ApiSchoolinfoSchoolinfo extends Schema.SingleType {
   collectionName: 'schoolinfos';
   info: {
@@ -958,6 +986,7 @@ declare module '@strapi/types' {
       'api::cooperation.cooperation': ApiCooperationCooperation;
       'api::event.event': ApiEventEvent;
       'api::newsarticle.newsarticle': ApiNewsarticleNewsarticle;
+      'api::page.page': ApiPagePage;
       'api::schoolinfo.schoolinfo': ApiSchoolinfoSchoolinfo;
     }
   }
