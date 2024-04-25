@@ -965,6 +965,34 @@ export interface ApiSchoolinfoSchoolinfo extends Schema.SingleType {
   };
 }
 
+export interface ApiTeamTeam extends Schema.CollectionType {
+  collectionName: 'teams';
+  info: {
+    singularName: 'team';
+    pluralName: 'teams';
+    displayName: 'Team';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    firstname: Attribute.String;
+    lastname: Attribute.String;
+    gender: Attribute.Enumeration<['Frau', 'Herr']> &
+      Attribute.DefaultTo<'Frau'>;
+    email: Attribute.String;
+    photo: Attribute.Media;
+    function: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::team.team', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::team.team', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -988,6 +1016,7 @@ declare module '@strapi/types' {
       'api::newsarticle.newsarticle': ApiNewsarticleNewsarticle;
       'api::page.page': ApiPagePage;
       'api::schoolinfo.schoolinfo': ApiSchoolinfoSchoolinfo;
+      'api::team.team': ApiTeamTeam;
     }
   }
 }

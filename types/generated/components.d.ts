@@ -11,6 +11,11 @@ export interface BasicsSection extends Schema.Component {
     text: Attribute.Blocks;
     image: Attribute.Media;
     files: Attribute.Media;
+    teammembers: Attribute.Relation<
+      'basics.section',
+      'oneToMany',
+      'api::team.team'
+    >;
   };
 }
 
