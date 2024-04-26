@@ -34,18 +34,40 @@
       "type": "string"
     },
     "Logo_positive": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "Logo_negative": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
+    },
+    "mo": {
+      "type": "string",
+      "maxLength": 30
+    },
+    "di": {
+      "type": "string",
+      "maxLength": 30
+    },
+    "mi": {
+      "type": "string",
+      "maxLength": 30
+    },
+    "do": {
+      "type": "string",
+      "maxLength": 30
+    },
+    "fr": {
+      "type": "string",
+      "maxLength": 30
     }
   }
 }

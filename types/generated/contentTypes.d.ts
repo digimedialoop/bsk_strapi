@@ -826,6 +826,7 @@ export interface ApiEventEvent extends Schema.CollectionType {
     singularName: 'event';
     pluralName: 'events';
     displayName: 'Termine';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -842,6 +843,8 @@ export interface ApiEventEvent extends Schema.CollectionType {
     allday: Attribute.Boolean & Attribute.DefaultTo<false>;
     description: Attribute.Blocks;
     attachments: Attribute.Media;
+    eventlink: Attribute.UID<'api::event.event', 'title'> & Attribute.Required;
+    image: Attribute.Media;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -947,6 +950,26 @@ export interface ApiSchoolinfoSchoolinfo extends Schema.SingleType {
     schoolsubname: Attribute.String;
     Logo_positive: Attribute.Media;
     Logo_negative: Attribute.Media;
+    mo: Attribute.String &
+      Attribute.SetMinMaxLength<{
+        maxLength: 30;
+      }>;
+    di: Attribute.String &
+      Attribute.SetMinMaxLength<{
+        maxLength: 30;
+      }>;
+    mi: Attribute.String &
+      Attribute.SetMinMaxLength<{
+        maxLength: 30;
+      }>;
+    do: Attribute.String &
+      Attribute.SetMinMaxLength<{
+        maxLength: 30;
+      }>;
+    fr: Attribute.String &
+      Attribute.SetMinMaxLength<{
+        maxLength: 30;
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

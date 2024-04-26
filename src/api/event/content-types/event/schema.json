@@ -4,7 +4,8 @@
   "info": {
     "singularName": "event",
     "pluralName": "events",
-    "displayName": "Termine"
+    "displayName": "Termine",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -35,12 +36,24 @@
       "type": "blocks"
     },
     "attachments": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
-        "images",
         "files"
+      ]
+    },
+    "eventlink": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true
+    },
+    "image": {
+      "allowedTypes": [
+        "images"
       ],
       "type": "media",
-      "multiple": true
+      "multiple": false
     }
   }
 }
