@@ -845,6 +845,9 @@ export interface ApiEventEvent extends Schema.CollectionType {
     attachments: Attribute.Media;
     eventlink: Attribute.UID<'api::event.event', 'title'> & Attribute.Required;
     image: Attribute.Media;
+    eventtype: Attribute.Enumeration<
+      ['Allgemein', 'Sch\u00FCler', 'Lehrer', 'Eltern', 'Ferien']
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
