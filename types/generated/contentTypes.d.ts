@@ -973,6 +973,7 @@ export interface ApiSchoolinfoSchoolinfo extends Schema.SingleType {
       Attribute.SetMinMaxLength<{
         maxLength: 30;
       }>;
+    schoolmanagement: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

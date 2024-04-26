@@ -68,6 +68,9 @@
     "fr": {
       "type": "string",
       "maxLength": 30
+    },
+    "schoolmanagement": {
+      "type": "string"
     }
   }
 }
