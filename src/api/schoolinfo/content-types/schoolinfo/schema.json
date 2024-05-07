@@ -71,6 +71,18 @@
     },
     "schoolmanagement": {
       "type": "string"
+    },
+    "classes": {
+      "type": "integer",
+      "default": 0
+    },
+    "teachers": {
+      "type": "integer",
+      "default": 0
+    },
+    "pupils": {
+      "type": "integer",
+      "default": 0
     }
   }
 }

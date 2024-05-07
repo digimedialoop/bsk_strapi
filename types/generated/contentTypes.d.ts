@@ -974,6 +974,9 @@ export interface ApiSchoolinfoSchoolinfo extends Schema.SingleType {
         maxLength: 30;
       }>;
     schoolmanagement: Attribute.String;
+    classes: Attribute.Integer & Attribute.DefaultTo<0>;
+    teachers: Attribute.Integer & Attribute.DefaultTo<0>;
+    pupils: Attribute.Integer & Attribute.DefaultTo<0>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
