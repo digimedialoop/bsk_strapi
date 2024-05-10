@@ -72,17 +72,29 @@
     "schoolmanagement": {
       "type": "string"
     },
-    "classes": {
+    "box1_number": {
       "type": "integer",
       "default": 0
     },
-    "teachers": {
+    "box2_number": {
       "type": "integer",
       "default": 0
     },
-    "pupils": {
+    "box3_number": {
       "type": "integer",
       "default": 0
+    },
+    "box1_label": {
+      "type": "string",
+      "maxLength": 30
+    },
+    "box2_label": {
+      "type": "string",
+      "maxLength": 30
+    },
+    "box3_label": {
+      "type": "string",
+      "maxLength": 30
     }
   }
 }
